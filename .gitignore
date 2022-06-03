@@ -6,3 +6,5 @@ aave-exports
 env.txt
 .history/
 .vscode/
+gpg
+go-password-generator

@@ -114,7 +114,7 @@ func TestPasswordGenerator_Generate(t *testing.T) {
 	}
 }
 
-func Benchmark_TestHandleRequest(b *testing.B) {
+func Benchmark_TestPasswordGenerator_Generate(b *testing.B) {
 	tc := struct {
 		testcasename   string
 		passwordLength int32

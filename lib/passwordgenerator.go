@@ -38,6 +38,11 @@ func (p *PasswordGenerator) WithLength(n int32) *PasswordGenerator {
 	return p
 }
 
+// Length ...
+func (p *PasswordGenerator) Length() int32 {
+	return p.length
+}
+
 // ValidateRequest ... validates the PasswordGenerator request and outputs error if any
 func (p *PasswordGenerator) ValidateRequest() (bool, error) {
 	if p.length < DefaultPasswordLength {
