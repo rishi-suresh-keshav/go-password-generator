@@ -26,6 +26,5 @@ Note: Run `./gpg --help` for help in using command
 call `http://localhost:8000/go-password-generator/generate` endpoint to generate
 
 ## Building and running docker image
-    make build-gpg-server
     docker build -t go-password-generator:latest .
     docker run -it -p 8000:8000 "go-password-generator:latest"
