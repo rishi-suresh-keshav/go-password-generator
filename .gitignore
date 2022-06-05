@@ -1,10 +1,7 @@
-.envrc
 dist/
 build/
 .idea/
-aave-exports
-env.txt
 .history/
 .vscode/
-gpg
-go-password-generator
+.gpg
+.go-password-generator
