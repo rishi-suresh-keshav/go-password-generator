@@ -3,7 +3,7 @@
 ###
 .PHONY: build-gpg-cli
 build-gpg-cli:
-	go build -o gpg cmd/go-password-generator/main.go
+	go build -o gpg cmd/cli/main.go
 
 ###
 ### clean
@@ -18,7 +18,7 @@ clean-gpg-cli:
 ###
 .PHONY: build-gpg-server
 build-gpg-server:
-	GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o go-password-generator server/main.go
+	go build -o go-password-generator cmd/go-password-generator/main.go
 
 ###
 ### clean

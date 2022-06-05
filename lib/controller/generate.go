@@ -1,13 +1,10 @@
-package main
+package controller
 
 import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"net/http"
-
-	"github.com/gorilla/mux"
 
 	gpg "github.com/rishi-suresh-keshav/go-password-generator/lib"
 )
@@ -16,15 +13,7 @@ var (
 	ContentTypeHeader = "Content-Type"
 )
 
-func main() {
-	serveMux := mux.NewRouter()
-	serveMux.HandleFunc("/go-password-generator/generate", generatePassword).Methods(http.MethodPost)
-
-	fmt.Println("starting server at port 8000")
-	log.Fatal(http.ListenAndServe(":8000", serveMux))
-}
-
-func generatePassword(w http.ResponseWriter, r *http.Request) {
+func GeneratePassword(w http.ResponseWriter, r *http.Request) {
 	w.Header().Add(ContentTypeHeader, "application/json")
 
 	requestBody, _ := ioutil.ReadAll(r.Body)
