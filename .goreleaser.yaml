@@ -1,5 +1,3 @@
-env:
-  - VERSION={{ if index .Env "VERSION" }}{{ .Env.VERSION }}{{ else }}{{ .Version }}{{ end }}
 before:
   hooks:
     - go mod tidy
@@ -8,6 +6,7 @@ builds:
   - env:
       - GO111MODULE=on
       - CGO_ENABLED=0
+    main: ./cmd/cli/main.go
     goos:
       - linux
       - darwin
@@ -27,7 +26,7 @@ archives:
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "{{ .Env.Version }}"
+  name_template: "{{ .Env.VERSION }}"
 changelog:
   sort: asc
   filters:
