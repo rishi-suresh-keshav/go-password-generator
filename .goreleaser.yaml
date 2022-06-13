@@ -1,0 +1,36 @@
+env:
+  - VERSION={{ if index .Env "VERSION" }}{{ .Env.VERSION }}{{ else }}{{ .Version }}{{ end }}
+before:
+  hooks:
+    - go mod tidy
+    - go mod download
+builds:
+  - env:
+      - GO111MODULE=on
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+brews:
+  - tap:
+      owner: rishi-suresh-keshav
+      name: go-password-generator
+    folder: Formula
+    homepage: https://github.com/rishi-suresh-keshav/go-password-generator
+    description: A simple go app to generate password containing random string
+archives:
+  - replacements:
+      darwin: Darwin
+      linux: Linux
+      386: i386
+      amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Env.Version }}"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'

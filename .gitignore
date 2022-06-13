@@ -5,3 +5,5 @@ build/
 .vscode/
 .gpg
 .go-password-generator
+dist/
+.envrc
