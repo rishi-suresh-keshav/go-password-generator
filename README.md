@@ -4,6 +4,11 @@ A simple app to generate password containing random characters. It contains a mi
 2. 3 random digits included
 3. 3 special characters included
 
+## App can be installed using homebrew
+    brew tap rishi-suresh-keshav/go-password-generator https://github.com/rishi-suresh-keshav/go-password-generator
+    brew install go-password-generator
+    go-password-generator generate
+    go-password-generator generate --length 25
 
 ## App can be run in 2 ways
 1. Using cli app
